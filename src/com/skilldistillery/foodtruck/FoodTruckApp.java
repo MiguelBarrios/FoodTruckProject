@@ -21,9 +21,16 @@ public class FoodTruckApp {
 
 	}
 	
-	public void displayTrucks() {
-		for(int i = 0; i < this.numberOfTrucks; ++i) {
-			System.out.println(this.trucks[i]);
+
+	
+	public void getTruckDataFromUser(Scanner scanner) {
+		for(int i = 0; i < MAX_NUM_TRUCKS; ++i) {
+			FoodTruck foodTruck = getFoodTruckInfo(scanner);
+			if(foodTruck == null)
+				break;
+			
+			this.trucks[numberOfTrucks] = foodTruck;
+			++numberOfTrucks;
 		}
 	}
 	
@@ -42,18 +49,9 @@ public class FoodTruckApp {
 		return new FoodTruck(name, type, rating);
 	}
 	
-	public void getTruckDataFromUser(Scanner scanner) {
-		for(int i = 0; i < MAX_NUM_TRUCKS; ++i) {
-			FoodTruck foodTruck = getFoodTruckInfo(scanner);
-			if(foodTruck == null)
-				break;
-			
-			this.trucks[numberOfTrucks] = foodTruck;
-			++numberOfTrucks;
+	public void displayTrucks() {
+		for(int i = 0; i < this.numberOfTrucks; ++i) {
+			System.out.println(this.trucks[i]);
 		}
-		
 	}
-
-	
-
 }
