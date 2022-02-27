@@ -25,6 +25,12 @@ public class FoodTruckApp {
 
 	}
 	
+	public void listFoodTrucks() {
+		for(int i = 0; i < this.numberOfTrucks; ++i) {
+			System.out.println(trucks[i]);
+		}
+	}
+	
 	public void displayMenu() {
 		System.out.println("Select from the following");
 		System.out.println("1) List all existing food trucks");
