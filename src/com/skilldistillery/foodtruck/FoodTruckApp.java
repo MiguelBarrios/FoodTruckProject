@@ -15,10 +15,11 @@ public class FoodTruckApp {
 		Scanner scanner = new Scanner(System.in);
 		FoodTruckApp app = new FoodTruckApp();
 		
-		//app.getTruckDataFromUser(scanner);
+		app.getTruckDataFromUser(scanner);
 		app.displayMenu();
 		int userSelection = app.getNumericInput(scanner);
 		System.out.println(userSelection);
+		app.displayAverageFoodTruckRating();
 		
 		//app.displayTrucks();
 		
@@ -29,6 +30,15 @@ public class FoodTruckApp {
 		for(int i = 0; i < this.numberOfTrucks; ++i) {
 			System.out.println(trucks[i]);
 		}
+	}
+	
+	public void displayAverageFoodTruckRating() {
+		double sum = 0;
+		for(int i = 0; i < this.numberOfTrucks; ++i) {
+			sum += this.trucks[i].getRating();
+		}
+		double average = sum / this.numberOfTrucks;
+		System.out.println("Average Rating: " + average);
 	}
 	
 	public void displayMenu() {
