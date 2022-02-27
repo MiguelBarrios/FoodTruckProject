@@ -14,13 +14,31 @@ public class FoodTruckApp {
 		
 		Scanner scanner = new Scanner(System.in);
 		FoodTruckApp app = new FoodTruckApp();
-		app.getTruckDataFromUser(scanner);
 		
-		app.displayTrucks();
+		//app.getTruckDataFromUser(scanner);
+		app.displayMenu();
+		int userSelection = app.getNumericInput(scanner);
+		System.out.println(userSelection);
+		
+		//app.displayTrucks();
 		
 
 	}
 	
+	public void displayMenu() {
+		System.out.println("Select from the following");
+		System.out.println("1) List all existing food trucks");
+		System.out.println("2) Show average food truck rating");
+		System.out.println("3) Show highest-rated food truck");
+		System.out.println("4) Quit");
+	}
+	
+	
+	public int getNumericInput(Scanner scanner) {
+		System.out.print("Selection: ");
+		int input = scanner.nextInt();
+		return input;
+	}
 
 	
 	public void getTruckDataFromUser(Scanner scanner) {
