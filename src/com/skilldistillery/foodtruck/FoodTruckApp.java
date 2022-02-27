@@ -20,10 +20,31 @@ public class FoodTruckApp {
 		int userSelection = app.getNumericInput(scanner);
 		System.out.println(userSelection);
 		app.displayAverageFoodTruckRating();
+		app.displayHighestRatedTruck();
 		
 		//app.displayTrucks();
 		
 
+	}
+	
+	public void displayHighestRatedTruck() {
+		int highestRating = 0;
+		// Find highest Rating
+		for(int i = 0; i < this.numberOfTrucks; ++i) {
+			if(this.trucks[i].getRating() > highestRating) {
+				highestRating = this.trucks[i].getRating();
+			}
+		}
+		
+		// show trucks with highest rating
+		System.out.println("Highest Rated Trucks");
+		for(int i = 0 ; i< this.numberOfTrucks; ++i) {
+			if(trucks[i].getRating() == highestRating) {
+				System.out.println(trucks[i]);
+			}
+		}
+		
+		
 	}
 	
 	public void listFoodTrucks() {
