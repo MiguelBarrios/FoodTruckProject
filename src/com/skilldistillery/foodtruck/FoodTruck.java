@@ -10,9 +10,9 @@ public class FoodTruck {
 	
 	private String type;
 	
-	private int rating;
+	private double rating;
 	
-	public FoodTruck(String name, String type, int rating) {
+	public FoodTruck(String name, String type, double rating) {
 		this.name = name;
 		this.type = type;
 		this.rating = rating;
@@ -44,7 +44,7 @@ public class FoodTruck {
 		this.type = type;
 	}
 
-	public int getRating() {
+	public double getRating() {
 		return rating;
 	}
 
